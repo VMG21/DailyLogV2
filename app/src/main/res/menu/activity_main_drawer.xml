@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_registros"
+            android:title="Clientes" />
+        <item
+            android:id="@+id/nav_agregar"
+            android:title="Agregar cliente nuevo" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="@string/acerca_de_alpha_coders" />
+        <item
+            android:id="@+id/nav_cerrar_sesion"
+            android:title="@string/cerrar_sesi_n" />
+    </group>
+</menu>

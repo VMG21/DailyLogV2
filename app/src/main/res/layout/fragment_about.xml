@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acerca de DailyLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="412dp"
+        android:layout_height="382dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac nunc nibh. Sed vitae risus et mi faucibus congue. Maecenas mattis porta diam, sit amet ultricies turpis pharetra et. Vivamus pretium ex odio, nec placerat augue auctor nec. Duis urna odio, hendrerit et tellus vitae, volutpat gravida purus. Ut hendrerit odio ut iaculis mollis. Nullam eget turpis vel diam consectetur porttitor. Mauris dui dolor, tincidunt a magna a, dapibus auctor urna. Vestibulum dignissim lectus erat, nec pulvinar lacus mollis quis. Suspendisse tempus lobortis lacus, vel scelerisque magna egestas ut.  Fusce ut interdum ante. Mauris varius scelerisque urna. Pellentesque sed ligula vestibulum, scelerisque lectus vitae, iaculis tellus. Quisque aliquet a nisl eu malesuada. Quisque varius blandit ipsum, sit amet dictum ligula porttitor ac. Nullam eget dui ante. Vivamus ipsum mi, ultrices sit amet est id, egestas pharetra nisi. Curabitur aliquet quam a libero ultricies ornare. Integer id magna aliquet, congue quam sit amet, mattis tortor. Duis non mauris diam. Nam a ullamcorper turpis. Curabitur quis molestie lacus. Ut suscipit elit eu nunc placerat, in tincidunt justo faucibus. Nulla porta quis velit ac auctor.  "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

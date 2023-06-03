@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "907262111588",
+    "firebase_url": "https://logintoolbar-4c180-default-rtdb.firebaseio.com",
+    "project_id": "logintoolbar-4c180",
+    "storage_bucket": "logintoolbar-4c180.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907262111588:android:20d56ee86793d840759471",
+        "android_client_info": {
+          "package_name": "com.tec.dailylogv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907262111588-j6li2cj0392ft5h2vpm6oj5nd66nf8ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD9daD8mBRcNpfYAhJU7sjxdovnE1huoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907262111588-j2a8c2jm0deusmrseonhrr9ke9uelou3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907262111588:android:05a0e9b27dbbc464759471",
+        "android_client_info": {
+          "package_name": "com.tec.rt_victor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907262111588-j6li2cj0392ft5h2vpm6oj5nd66nf8ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD9daD8mBRcNpfYAhJU7sjxdovnE1huoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907262111588-j2a8c2jm0deusmrseonhrr9ke9uelou3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907262111588:android:a3077a6c16b135df759471",
+        "android_client_info": {
+          "package_name": "mx.itesm.logintoolbar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907262111588-ffoj49in09iojfj47i6p1sn0econud6o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.itesm.logintoolbar",
+            "certificate_hash": "57d45ec587c5f01027581344fc95d838c4ca76d1"
+          }
+        },
+        {
+          "client_id": "907262111588-j6li2cj0392ft5h2vpm6oj5nd66nf8ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD9daD8mBRcNpfYAhJU7sjxdovnE1huoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907262111588-j2a8c2jm0deusmrseonhrr9ke9uelou3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
