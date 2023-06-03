@@ -1,7 +1,6 @@
 package com.tec.dailylogv2.ui.registros
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,14 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import com.tec.dailylogv2.R
 import com.tec.dailylogv2.dl.Cliente
-import com.tec.dailylogv2.ui.agregarRegistro.AgregarRegistroFragment
 
 class RegistrosFragment : Fragment(R.layout.fragment_registros) {
     private lateinit var recyclerView: RecyclerView
@@ -149,6 +145,7 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
 
     private fun deleteUser(user: Cliente) {
         val userRef = FirebaseDatabase.getInstance().getReference("Clientes").child(user.name.toString())
+        val diagUserRef = FirebaseDatabase.getInstance().getReference("Diagnosticos").child(user.name.toString())
         userRef.removeValue()
             .addOnSuccessListener {
                 Toast.makeText(requireContext(), "Usuario eliminado de forma satisfactoria", Toast.LENGTH_SHORT).show()
@@ -156,5 +153,6 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
             .addOnFailureListener {
                 Toast.makeText(requireContext(), "Hubo en error al eliminar al usuario", Toast.LENGTH_SHORT).show()
             }
+        diagUserRef.removeValue()
     }
 }
