@@ -57,11 +57,6 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
             override fun getItemCount(): Int = usersList.size
         }
 
-//        val agregarCliente = view.findViewById<Button>(R.id.btnAddCliente)
-//        agregarCliente.setOnClickListener(){
-//            navigateToAgregarRegistro()
-//        }
-
         recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = this@RegistrosFragment.adapter
@@ -96,11 +91,6 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
         })
 
     }
-
-//    private fun navigateToAgregarRegistro() {
-//        val navController = findNavController()
-//        navController.navigate(R.id.nav_agregar)
-//    }
 
     private fun filterUsers(query: String) {
         val filteredList = usersList.filter { user ->
