@@ -31,7 +31,6 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
         return view
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.rvLista)
