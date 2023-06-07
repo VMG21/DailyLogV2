@@ -15,6 +15,7 @@
             android:title="@string/acerca_de_alpha_coders" />
         <item
             android:id="@+id/nav_cerrar_sesion"
-            android:title="@string/cerrar_sesi_n" />
+            android:title="@string/cerrar_sesi_n"
+            android:visible="false" />
     </group>
 </menu>

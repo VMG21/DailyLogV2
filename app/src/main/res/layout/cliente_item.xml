@@ -78,16 +78,17 @@
                         android:contentDescription="@string/todo"
                         app:srcCompat="@android:drawable/ic_menu_delete"
                         app:tint="#FF0000" />
+
                 </LinearLayout>
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imgBtnDiag"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="end"
-                    android:contentDescription="@string/todo3"
-                    app:srcCompat="@mipmap/ic_eye_foreground"
-                    app:tint="#000000" />
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_view"
+                    android:backgroundTint="#FFFFFF"
+                    app:tint="#000000"/>
+
             </LinearLayout>
 
         </LinearLayout>

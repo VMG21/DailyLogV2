@@ -9,11 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import com.tec.dailylogv2.R
 import com.tec.dailylogv2.dl.Cliente
+import com.tec.dailylogv2.ui.agregarRegistro.AgregarRegistroFragment
+import com.tec.dailylogv2.ui.diagnostico.Diagnostico
 
 class RegistrosFragment : Fragment(R.layout.fragment_registros) {
     private lateinit var recyclerView: RecyclerView
@@ -51,6 +55,16 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
                 val deleteButton = holder.itemView.findViewById<ImageButton>(R.id.imgbtnDelete)
                 deleteButton.setOnClickListener {
                     showDeleteConfirmationDialog(user)
+                }
+
+                val nameButton = holder.itemView.findViewById<ImageButton>(R.id.imgBtnDiag)
+                nameButton.setOnClickListener {
+                    val user = usersList[position]
+                    val name = user.name
+                    val bundle = Bundle()
+
+                    bundle.putString("userName", name)
+                    findNavController().navigate(R.id.nav_diagnosticos, bundle)
                 }
             }
 
@@ -119,6 +133,23 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
 
         recyclerView.adapter = adapter
     }
+
+//    private fun navigateToOtherFragment() {
+//        val navController = findNavController()
+//        navController.navigate(R.id.nav_diagnosticos)
+//    }
+
+//    private fun navigateToOtherFragment(name: String?) {
+//        val otherFragment = Diagnostico()
+//        val bundle = Bundle()
+//        bundle.putString("userName", name)
+//        otherFragment.arguments = bundle
+//
+//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+//        transaction.replace(R.id.container, otherFragment)
+//        transaction.addToBackStack(null)
+//        transaction.commit()
+//    }
 
     private fun showDeleteConfirmationDialog(user: Cliente) {
         val alertDialog = AlertDialog.Builder(requireContext())
