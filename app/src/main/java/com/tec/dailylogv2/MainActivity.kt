@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.nav_home, R.id.nav_registros, R.id.nav_agregar,
                 R.id.nav_cerrar_sesion, R.id.nav_about, R.id.nav_diagnosticos,
-                R.id.nav_agregar_diagnostico
+                R.id.nav_agregar_diagnostico, R.id.nav_edit_cliente
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

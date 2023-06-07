@@ -30,12 +30,6 @@
         tools:layout="@layout/fragment_agregar_registro" />
 
     <fragment
-        android:id="@+id/nav_cerrar_sesion"
-        android:name="com.tec.dailylogv2.ui.cerrarSesion.CerrarSesionFragment"
-        android:label="@string/cerrar_sesi_n"
-        tools:layout="@layout/fragment_cerrar_sesion" />
-
-    <fragment
         android:id="@+id/nav_diagnosticos"
         android:name="com.tec.dailylogv2.ui.diagnostico.Diagnostico"
         android:label="Diagnosticos"
@@ -47,6 +41,13 @@
         android:name="com.tec.dailylogv2.ui.agregarDiagnostico.AgregarDiagnostico"
         android:label="Agregar diagnostico"
         tools:layout="@layout/fragment_agregar_diagnostico"
+        />
+
+    <fragment
+        android:id="@+id/nav_edit_cliente"
+        android:name="com.tec.dailylogv2.ui.editarRegistro.EditarCliente"
+        android:label="Editar Cliente"
+        tools:layout="@layout/fragment_editar_cliente"
         />
 
 </navigation>

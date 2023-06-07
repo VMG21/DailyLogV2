@@ -65,6 +65,16 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
                     bundle.putString("userName", name)
                     findNavController().navigate(R.id.nav_diagnosticos, bundle)
                 }
+
+                val editButton = holder.itemView.findViewById<ImageButton>(R.id.imgBtnEdit)
+                editButton.setOnClickListener {
+                    val user = usersList[position]
+                    val name = user.name
+
+                    val bundle = Bundle()
+                    bundle.putString("userName", name)
+                    findNavController().navigate(R.id.nav_edit_cliente, bundle)
+                }
             }
 
             override fun getItemCount(): Int = usersList.size
