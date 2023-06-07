@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -47,6 +48,7 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
 
             override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
                 val user = usersList[position]
+                val navController = findNavController()
                 holder.itemView.findViewById<TextView>(R.id.tvName).text = user.name
                 holder.itemView.findViewById<TextView>(R.id.tvEmail).text = user.email
                 holder.itemView.findViewById<TextView>(R.id.tvPhone).text = user.phone
@@ -63,7 +65,9 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
 
                     val bundle = Bundle()
                     bundle.putString("userName", name)
-                    findNavController().navigate(R.id.nav_diagnosticos, bundle)
+
+                    navController.popBackStack()
+                    navController.navigate(R.id.nav_diagnosticos, bundle)
                 }
 
                 val editButton = holder.itemView.findViewById<ImageButton>(R.id.imgBtnEdit)
@@ -73,7 +77,9 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
 
                     val bundle = Bundle()
                     bundle.putString("userName", name)
-                    findNavController().navigate(R.id.nav_edit_cliente, bundle)
+
+                    navController.popBackStack()
+                    navController.navigate(R.id.nav_edit_cliente, bundle)
                 }
             }
 

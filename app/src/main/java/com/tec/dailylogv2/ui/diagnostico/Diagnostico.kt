@@ -29,6 +29,7 @@ class Diagnostico : Fragment(R.layout.fragment_diagnostico) {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_diagnostico, container, false)
+        val navController = findNavController()
 
         val userName = arguments?.getString("userName")
         val bundle = Bundle()
@@ -38,7 +39,8 @@ class Diagnostico : Fragment(R.layout.fragment_diagnostico) {
 
         val navToAgregarDiagnostico = view.findViewById<Button>(R.id.btnNavAgregarDiag)
         navToAgregarDiagnostico.setOnClickListener{
-            findNavController().navigate(R.id.nav_agregar_diagnostico, bundle)
+            navController.popBackStack()
+            navController.navigate(R.id.nav_agregar_diagnostico, bundle)
         }
 
         return view

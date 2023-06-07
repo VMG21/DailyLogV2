@@ -11,8 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.tec.dailylogv2.R
 
 class HomeFragment : Fragment() {
-    private lateinit var navController: NavController
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,26 +20,24 @@ class HomeFragment : Fragment() {
         val buttonClientes = view.findViewById<Button>(R.id.btnNavigatoToClientes)
         val buttonAgregar = view.findViewById<Button>(R.id.btnNavigateToAgregar)
         val buttonAbout = view.findViewById<Button>(R.id.btnAbout)
+        val navController = findNavController()
 
         buttonClientes.setOnClickListener{
-            findNavController().navigate(R.id.nav_registros)
+            navController.popBackStack()
+            navController.navigate(R.id.nav_registros)
         }
 
         buttonAgregar.setOnClickListener {
-            findNavController().navigate(R.id.nav_agregar)
+            navController.popBackStack()
+            navController.navigate(R.id.nav_agregar)
         }
 
         buttonAbout.setOnClickListener {
-            findNavController().navigate(R.id.nav_about)
+            navController.popBackStack()
+            navController.navigate(R.id.nav_about)
         }
 
-
-
         return view
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
     }
 
 }
