@@ -1,5 +1,6 @@
 package com.tec.dailylogv2.ui.diagnostico
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +18,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.tec.dailylogv2.R
+import com.tec.dailylogv2.dl.Cliente
 import com.tec.dailylogv2.dl.Diagnostico
 
 class Diagnostico : Fragment(R.layout.fragment_diagnostico) {
@@ -88,6 +91,5 @@ class Diagnostico : Fragment(R.layout.fragment_diagnostico) {
 
             override fun onCancelled(error: DatabaseError) {}
         })
-
     }
 }
