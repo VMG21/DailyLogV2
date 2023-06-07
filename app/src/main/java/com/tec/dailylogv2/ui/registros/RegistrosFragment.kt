@@ -61,8 +61,8 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
                 nameButton.setOnClickListener {
                     val user = usersList[position]
                     val name = user.name
-                    val bundle = Bundle()
 
+                    val bundle = Bundle()
                     bundle.putString("userName", name)
                     findNavController().navigate(R.id.nav_diagnosticos, bundle)
                 }

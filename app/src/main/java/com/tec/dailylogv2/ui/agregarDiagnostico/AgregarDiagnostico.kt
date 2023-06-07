@@ -2,6 +2,7 @@ package com.tec.dailylogv2.ui.agregarDiagnostico
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,9 @@ class AgregarDiagnostico : Fragment() {
         val descripcion = view.findViewById<EditText>(R.id.etFecha)
         val registerButton = view.findViewById<Button>(R.id.btnAgregarDiag)
 
+        val userName = arguments?.getString("UserName")
+        Log.d("INFO", userName.toString())
+
         registerButton.setOnClickListener{
             val fechadb = fecha.text.toString()
             val desc = descripcion.text.toString()
@@ -31,7 +35,11 @@ class AgregarDiagnostico : Fragment() {
             val diagnostico = Diagnostico(fechadb, desc)
 
             val db = Firebase.database
-            val ref = db.getReference("Diagnosticos/")
+            val ref = db.getReference("Diagnosticos/${userName.toString()}")
+            ref.setValue(diagnostico)
+
+            fecha.setText("")
+            descripcion.setText("")
         }
 
         return view
