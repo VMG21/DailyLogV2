@@ -13,6 +13,7 @@ import com.google.firebase.ktx.Firebase
 import com.tec.dailylogv2.R
 import com.tec.dailylogv2.databinding.FragmentAgregarRegistroBinding
 import com.tec.dailylogv2.dl.Cliente
+import java.util.UUID
 
 class AgregarRegistroFragment : Fragment() {
 

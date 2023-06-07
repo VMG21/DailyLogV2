@@ -13,6 +13,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.tec.dailylogv2.R
 import com.tec.dailylogv2.dl.Diagnostico
+import java.util.UUID
 
 class AgregarDiagnostico : Fragment() {
     override fun onCreateView(
@@ -22,8 +23,9 @@ class AgregarDiagnostico : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_agregar_diagnostico, container, false)
         val fecha = view.findViewById<EditText>(R.id.etFecha)
-        val descripcion = view.findViewById<EditText>(R.id.etFecha)
+        val descripcion = view.findViewById<EditText>(R.id.etDescripcionDiag)
         val registerButton = view.findViewById<Button>(R.id.btnAgregarDiag)
+        val uniqueId = UUID.randomUUID().toString();
 
         val userName = arguments?.getString("UserName")
         Log.d("INFO", userName.toString())
@@ -35,7 +37,7 @@ class AgregarDiagnostico : Fragment() {
             val diagnostico = Diagnostico(fechadb, desc)
 
             val db = Firebase.database
-            val ref = db.getReference("Diagnosticos/${userName.toString()}")
+            val ref = db.getReference("Diagnosticos/${userName.toString()}/$uniqueId/")
             ref.setValue(diagnostico)
 
             fecha.setText("")

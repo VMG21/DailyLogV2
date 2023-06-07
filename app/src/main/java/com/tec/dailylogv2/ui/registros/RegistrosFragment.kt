@@ -9,21 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import com.tec.dailylogv2.R
 import com.tec.dailylogv2.dl.Cliente
-import com.tec.dailylogv2.ui.agregarRegistro.AgregarRegistroFragment
-import com.tec.dailylogv2.ui.diagnostico.Diagnostico
 
 class RegistrosFragment : Fragment(R.layout.fragment_registros) {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: RecyclerView.Adapter<*>
     private val usersList: MutableList<Cliente> = mutableListOf()
-    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,8 +37,12 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
         recyclerView = view.findViewById(R.id.rvLista)
 
         adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.cliente_item, parent, false)
+            override fun onCreateViewHolder(
+                parent: ViewGroup,
+                viewType: Int
+            ): RecyclerView.ViewHolder {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.cliente_item, parent, false)
                 return object : RecyclerView.ViewHolder(view) {}
             }
 
@@ -77,7 +77,6 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
         }
 
         val ref = FirebaseDatabase.getInstance().getReference("Clientes")
-
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 usersList.clear()
@@ -88,8 +87,7 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
                 adapter.notifyDataSetChanged()
             }
 
-            override fun onCancelled(error: DatabaseError) {
-            }
+            override fun onCancelled(error: DatabaseError) {}
         })
 
         val searchEditText = view.findViewById<EditText>(R.id.etBuscar)
@@ -127,29 +125,10 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
                     showDeleteConfirmationDialog(user)
                 }
             }
-
             override fun getItemCount(): Int = filteredList.size
         }
-
         recyclerView.adapter = adapter
     }
-
-//    private fun navigateToOtherFragment() {
-//        val navController = findNavController()
-//        navController.navigate(R.id.nav_diagnosticos)
-//    }
-
-//    private fun navigateToOtherFragment(name: String?) {
-//        val otherFragment = Diagnostico()
-//        val bundle = Bundle()
-//        bundle.putString("userName", name)
-//        otherFragment.arguments = bundle
-//
-//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-//        transaction.replace(R.id.container, otherFragment)
-//        transaction.addToBackStack(null)
-//        transaction.commit()
-//    }
 
     private fun showDeleteConfirmationDialog(user: Cliente) {
         val alertDialog = AlertDialog.Builder(requireContext())
