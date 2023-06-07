@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Esta app permite a cualquier persona que tenga un negocio darle seguimiento y tener un historial de los tratamientos, diagnósticos y consultas de sus clientes de una forma más sencilla y prácticapermita a los médicos darle seguimiento y tener un historial de los tratamientos, diagnósticos y consultas de sus pacientes de una forma más sencilla y práctica"
+            android:text="Esta app permite a cualquier persona que tenga un negocio darle seguimiento y tener un historial de los tratamientos, diagnósticos y consultas de sus clientes de una forma más sencilla y práctica"
             android:textSize="20sp" />
     </LinearLayout>
 
