@@ -124,7 +124,10 @@ class RegistrosFragment : Fragment(R.layout.fragment_registros) {
             user.name?.contains(query, ignoreCase = true) ?: true
         }
         adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+            override fun onCreateViewHolder(
+                parent: ViewGroup,
+                viewType: Int
+            ): RecyclerView.ViewHolder {
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.cliente_item, parent, false)
                 return object : RecyclerView.ViewHolder(view) {}
             }
